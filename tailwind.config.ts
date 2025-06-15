@@ -84,18 +84,17 @@ const shadcnThemeExtend = {
 };
 
 export default {
-  darkMode: ["class"],
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    fontFamily: {
-      peyda: ["var(--font-peyda)"],
-      poppins: ["var(--font-poppins)"],
-    },
     extend: {
+      fontFamily: {
+        peyda: ["var(--font-peyda)"],
+        poppins: ["var(--font-poppins)"],
+      },
       ...shadcnThemeExtend,
       keyframes: {
         "accordion-down": {
@@ -129,7 +128,7 @@ export default {
         portofolio: {
           ...require("daisyui/src/theming/themes")["dark"],
           primary: "#C6FCA6",
-          secondary : "#A7FCEE",
+          secondary: "#A7FCEE",
           "base-100": "#081B28",
           "base-content": "#FFFFFF",
           "--rounded-btn": "1rem",
