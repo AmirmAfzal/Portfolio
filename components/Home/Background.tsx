@@ -12,7 +12,7 @@ const Background = (props: Props) => {
   return (
     <div className="">
       <div className="absolute -top-1/2 left-1/2 z-10 h-[1000px] w-[1000px] -translate-x-1/2 rounded-full bg-primary opacity-10 blur-[100px]"></div>
-      <div className="bg-radial absolute left-0 top-full z-10 h-[1500px] w-[1500px] -translate-x-2/3 rounded-full  from-primary to-secondary opacity-20 blur-[200px]"></div>
+      <div className="bg-radial absolute left-0 top-full z-10 h-[1500px] w-[1500px] -translate-x-2/3 rounded-full  from-primary to-secondary opacity-20 blur-[200px] "></div>
     </div>
   );
 };

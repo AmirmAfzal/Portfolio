@@ -1,35 +1,61 @@
-@import "tailwindcss";
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss'layer(base);
+@import 'tailwindcss';
+
+@theme {
+  --font-display: "poppins"
+
+}
+
+@plugin "daisyui" {
+  themes: portfolio;
+}
+
+@plugin "daisyui/theme" {
+  name: "portfolio";
+  default: true;
+  /* set as default */
+  prefersdark: false;
+  /* set as default dark mode (prefers-color-scheme:dark) */
+  color-scheme: dark;
+  /* color of browser-provided UI */
+
+  --color-primary: #C6FCA6;
+  --color-primary-content: #000000;
+  --color-secondary: #A7FCEE;
+  --color-secondary-content: #000000;
+  --color-accent: #A7FCEE;
+  --color-accent-content: #000000;
+  --color-neutral: #1c2f3d;
+  --color-neutral-content: #FFFFFF;
+  --color-base-100: #081B28;
+  --color-base-200: #1c2f3d;
+  --color-base-300: #1c2f3d;
+  --color-base-content: #FFFFFF;
+
+  --radius-btn: 1rem;
+  --radius-field: 1rem;
+  --radius-box: 1rem;
+
+  --size-btn: 2rem;
+  --size-field: 0.3rem;
+
+  --border: 1px;
+
+  --depth: 0;
+  --noise: 0;
+}
+
+:root {
+  --font-poppins: 'Poppins', sans-serif;
+}
+
 * {
-  /* @apply font-poppins; */
+  font-family: var(--font-poppins);
   direction: ltr;
   scroll-behavior: smooth;
 }
 
-@layer base {
-  :root {
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
-    --radius: 20px
-  }
 
-  .dark {
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
-  }
-}
-
-@layer base {
-  
-}
 
 
 
@@ -66,12 +92,4 @@ input::-webkit-inner-spin-button {
 
 input[type=number] {
   -moz-appearance: textfield;
-}
-
-
-.germany-gradient-text {
-  background: linear-gradient(90deg, #000000 0%, #dd0000 50%, #ffce00 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  display: inline-block;
 }

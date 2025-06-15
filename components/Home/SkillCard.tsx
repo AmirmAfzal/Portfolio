@@ -1,13 +1,13 @@
 import React from "react";
 import Icon from "../ui/Icon";
-import TalkButton from "../ui/TalkButton";
 import { SkillInterface } from "@/lib/data/skills";
+import TalkButton from "./TalkButton";
 
 interface Props extends SkillInterface {}
 
 const SkillCard = (props: Props) => {
   return (
-    <div className="flex w-full flex-col justify-between rounded-lg border-2 border-[#717171] border-opacity-20 bg-base-200/20 px-8 pb-8 pt-12">
+    <div className="flex w-full flex-col justify-between rounded-2xl border-2 border-[#717171]/20 border-opacity-20 bg-base-200/20 px-8 pb-8 pt-12">
       <div className="flex w-full flex-col">
         <div className="flex flex-row items-center gap-4">
           <Icon

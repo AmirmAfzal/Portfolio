@@ -69,7 +69,7 @@ const router = useRouter();
   return (
     <div className="flex flex-col w-full h-screen items-center justify-center from-base-100 to-base-200 p-4">
       <div className="flex flex-col w-full max-w-lg items-center bg-base-100 py-16 px-8 rounded-3xl shadow-2xl relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-base-200/50 opacity-30"></div>
+        <div className="absolute inset-0 bg-linear-to-br from-primary/10 to-base-200/50 opacity-30"></div>
         {/* <div className="relative p-4">
           <Image
             src="https://placehold.co/400?text=Andishe"

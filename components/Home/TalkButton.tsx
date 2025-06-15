@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
-import Icon from "./Icon";
 import { twMerge } from "tailwind-merge";
+import Icon from "../ui/Icon";
 
 interface Props {
   className?: string;
@@ -12,7 +12,7 @@ const TalkButton = (props: Props) => {
     <Link
       href={"/"}
       className={twMerge(
-        "btn btn-primary bg-gradient-to-r from-primary to-secondary px-16 hover:shadow-lg hover:shadow-primary/40",
+        "btn btn-primary from-primary to-secondary  px-16 ",
         props.className
       )}
     >

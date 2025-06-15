@@ -1,5 +1,6 @@
 import Background from "@/components/Home/Background";
 import HeroSection from "@/components/Home/HeroSection";
+import ProjectSection from "@/components/Home/ProjectSection";
 import SkillsSection from "@/components/Home/SkillsSection";
 import React from "react";
 
@@ -11,6 +12,7 @@ const HomePage = (props: Props) => {
       <Background />
       <HeroSection />
       <SkillsSection/>
+      <ProjectSection/>
     </div>
   );
 };

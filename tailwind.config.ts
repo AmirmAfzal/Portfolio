@@ -1,7 +1,8 @@
 import type { Config } from "tailwindcss";
+import daisyui from "daisyui";
+import animate from "tailwindcss-animate";
 
-import daisyui, { type Config as DaisyUIConfig } from "daisyui";
-
+// Define DaisyUI theme extension types
 type DaisyuiThemeExtend = {
   borderRadius: {
     badge: string;
@@ -31,48 +32,52 @@ type DaisyuiThemeExtend = {
     "error-content": string;
   };
 };
-const daisyuiThemeExtend = daisyui.config!.theme!.extend as DaisyuiThemeExtend;
 
+// Extract DaisyUI theme extension
+const daisyuiThemeExtend = daisyui.config?.theme?.extend as DaisyuiThemeExtend;
+
+// Define ShadCN theme extension
 const shadcnThemeExtend = {
   borderRadius: {
-    lg: daisyuiThemeExtend.borderRadius.badge,
-    md: daisyuiThemeExtend.borderRadius.btn,
-    sm: daisyuiThemeExtend.borderRadius.box,
+    lg: daisyuiThemeExtend?.borderRadius?.badge ?? "0.5rem",
+    md: daisyuiThemeExtend?.borderRadius?.btn ?? "0.25rem",
+    sm: daisyuiThemeExtend?.borderRadius?.box ?? "0.125rem",
   },
   colors: {
-    background: daisyuiThemeExtend.colors["base-100"],
-    foreground: daisyuiThemeExtend.colors["base-content"],
+    background: daisyuiThemeExtend?.colors?.["base-100"] ?? "#081B28",
+    foreground: daisyuiThemeExtend?.colors?.["base-content"] ?? "#FFFFFF",
     card: {
-      DEFAULT: daisyuiThemeExtend.colors["base-100"],
-      foreground: daisyuiThemeExtend.colors["base-content"],
+      DEFAULT: daisyuiThemeExtend?.colors?.["base-100"] ?? "#081B28",
+      foreground: daisyuiThemeExtend?.colors?.["base-content"] ?? "#FFFFFF",
     },
     popover: {
-      DEFAULT: daisyuiThemeExtend.colors["base-100"],
-      foreground: daisyuiThemeExtend.colors["base-content"],
+      DEFAULT: daisyuiThemeExtend?.colors?.["base-100"] ?? "#081B28",
+      foreground: daisyuiThemeExtend?.colors?.["base-content"] ?? "#FFFFFF",
     },
     primary: {
-      DEFAULT: daisyuiThemeExtend.colors.primary,
-      foreground: daisyuiThemeExtend.colors["primary-content"],
+      DEFAULT: daisyuiThemeExtend?.colors?.primary ?? "#C6FCA6",
+      foreground: daisyuiThemeExtend?.colors?.["primary-content"] ?? "#000000",
     },
     secondary: {
-      DEFAULT: daisyuiThemeExtend.colors.secondary,
-      foreground: daisyuiThemeExtend.colors["secondary-content"],
+      DEFAULT: daisyuiThemeExtend?.colors?.secondary ?? "#A7FCEE",
+      foreground:
+        daisyuiThemeExtend?.colors?.["secondary-content"] ?? "#000000",
     },
     muted: {
-      DEFAULT: daisyuiThemeExtend.colors["base-300"],
-      foreground: daisyuiThemeExtend.colors["base-content"],
+      DEFAULT: daisyuiThemeExtend?.colors?.["base-300"] ?? "#1c2f3d",
+      foreground: daisyuiThemeExtend?.colors?.["base-content"] ?? "#FFFFFF",
     },
     accent: {
-      DEFAULT: daisyuiThemeExtend.colors.accent,
-      foreground: daisyuiThemeExtend.colors["accent-content"],
+      DEFAULT: daisyuiThemeExtend?.colors?.accent ?? "#A7FCEE",
+      foreground: daisyuiThemeExtend?.colors?.["accent-content"] ?? "#000000",
     },
     destructive: {
-      DEFAULT: daisyuiThemeExtend.colors.error,
-      foreground: daisyuiThemeExtend.colors["error-content"],
+      DEFAULT: daisyuiThemeExtend?.colors?.error ?? "#ef4444",
+      foreground: daisyuiThemeExtend?.colors?.["error-content"] ?? "#FFFFFF",
     },
-    border: daisyuiThemeExtend.colors["base-300"],
-    input: daisyuiThemeExtend.colors["base-300"],
-    ring: daisyuiThemeExtend.colors.primary,
+    border: daisyuiThemeExtend?.colors?.["base-300"] ?? "#1c2f3d",
+    input: daisyuiThemeExtend?.colors?.["base-300"] ?? "#1c2f3d",
+    ring: daisyuiThemeExtend?.colors?.primary ?? "#C6FCA6",
     chart: {
       "1": "hsl(var(--chart-1))",
       "2": "hsl(var(--chart-2))",
@@ -85,33 +90,24 @@ const shadcnThemeExtend = {
 
 export default {
   content: [
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
       fontFamily: {
-        peyda: ["var(--font-peyda)"],
-        poppins: ["var(--font-poppins)"],
+        poppins: ["var(--font-poppins)", "sans-serif"],
       },
       ...shadcnThemeExtend,
       keyframes: {
         "accordion-down": {
-          from: {
-            height: "0",
-          },
-          to: {
-            height: "var(--radix-accordion-content-height)",
-          },
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
         },
         "accordion-up": {
-          from: {
-            height: "var(--radix-accordion-content-height)",
-          },
-          to: {
-            height: "0",
-          },
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
         },
       },
       animation: {
@@ -120,21 +116,6 @@ export default {
       },
     },
   },
-  plugins: [require("tailwindcss-animate"), require("daisyui")],
-  daisyui: {
-    themes: [
-      // "dark",
-      {
-        portofolio: {
-          ...require("daisyui/src/theming/themes")["dark"],
-          primary: "#C6FCA6",
-          secondary: "#A7FCEE",
-          "base-100": "#081B28",
-          "base-content": "#FFFFFF",
-          "--rounded-btn": "1rem",
-        },
-      },
-    ],
-    styled: true,
-  },
+  plugins: [animate],
+  
 } satisfies Config;

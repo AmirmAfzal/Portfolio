@@ -7,7 +7,7 @@ interface Props {}
 const Navbar = (props: Props) => {
   return (
     <div
-      className="container absolute left-1/2 top-0 z-[9999] mx-auto flex -translate-x-1/2 items-center justify-between py-16"
+      className="container absolute left-1/2 top-0 z-9999 mx-auto flex -translate-x-1/2 items-center justify-between py-16"
       id="navbar"
     >
       <NavLink href={"/"}>ABOUT</NavLink>
