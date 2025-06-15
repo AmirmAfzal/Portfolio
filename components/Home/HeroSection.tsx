@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import Icon from "../ui/Icon";
+import TalkButton from "../ui/TalkButton";
 
 interface Props {}
 
@@ -18,10 +19,7 @@ const HeroSection = (props: Props) => {
           Passionate about building modern web applications and learning new technologies.
         </p>
         <div className="mt-8 flex flex-row gap-4">
-          <Link href={"/"} className="btn btn-primary bg-gradient-to-r from-primary to-secondary hover:shadow-primary/40 hover:shadow-lg px-16">
-            <Icon icon="mynaui:sparkles-solid" width={24} />
-            Let's talk
-          </Link>
+          <TalkButton/>
           <Link href={"/"} className="btn btn-outline border-base-content/40 px-16">
             View skills
             <Icon icon="mynaui:arrow-up-right" width={24} />
