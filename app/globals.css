@@ -31,6 +31,8 @@
   --color-base-200: #1c2f3d;
   --color-base-300: #1c2f3d;
   --color-base-content: #FFFFFF;
+  --color-error: #F87272;
+  --color-error-content: #000000;
 
   --radius-btn: 1rem;
   --radius-field: 1rem;
