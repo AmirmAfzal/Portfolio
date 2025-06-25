@@ -7,7 +7,7 @@ interface Props {}
 
 const SkillsSection = (props: Props) => {
   return (
-    <div className="relative z-20 container mx-auto flex min-h-screen mt-32 flex-col items-center">
+    <div className="relative z-20 container mx-auto flex mt-32 flex-col items-center" id="skills">
       <HeroTitle
         title="MY SKILLS"
         subtitle="Thing I Am Good At"

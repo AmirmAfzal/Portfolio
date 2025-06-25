@@ -7,7 +7,7 @@ interface Props {}
 
 const ProjectSection = (props: Props) => {
   return (
-    <div className="relative z-20 mt-64 container mx-auto flex min-h-screen flex-col items-center justify-center">
+    <div className="relative z-20 mt-64 container mx-auto flex flex-col items-center justify-center">
       <HeroTitle
         title="MY PROJECTS"
         subtitle="Some Of My Projects"

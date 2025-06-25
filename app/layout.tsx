@@ -4,9 +4,8 @@ import "./globals.css";
 import AuthProvider from "./auth/AuthProvider";
 import { Poppins } from "next/font/google";
 import Navbar from "@/components/ui/Navbar/Navbar";
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
-gsap.registerPlugin(useGSAP);
+
+
 
 const poppins = Poppins({
   subsets: ["latin"],

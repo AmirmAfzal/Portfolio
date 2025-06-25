@@ -6,7 +6,7 @@ interface Props {}
 
 const AboutSection = (props: Props) => {
   return (
-    <div className="relative z-20 container mx-auto mt-64 grid gap-8 min-h-screen items-center grid-cols-2">
+    <div className="relative z-20 container mx-auto mt-64 grid gap-8 items-center grid-cols-2">
       <div className="flex flex-col">
         <HeroTitle
           className="items-start"
