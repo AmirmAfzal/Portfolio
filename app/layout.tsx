@@ -1,11 +1,10 @@
-import localFont from "next/font/local";
-import Footer from "../components/ui/Footer";
-import "./globals.css";
-import AuthProvider from "./auth/AuthProvider";
 import { Poppins } from "next/font/google";
+
 import Navbar from "@/components/ui/Navbar/Navbar";
+import AuthProvider from "./auth/AuthProvider";
+import Footer from "@/components/ui/Footer";
 
-
+import "./globals.css";
 
 const poppins = Poppins({
   subsets: ["latin"],

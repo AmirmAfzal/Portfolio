@@ -1,5 +1,13 @@
 "use client";
-import React, { startTransition, useActionState, useEffect } from "react";
+import React, { startTransition, useActionState } from "react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
+
+import { createContact } from "@/lib/actions/contantForm";
+import { contactSchema } from "@/lib/validation/schemas/contactSchema";
+import { ActionData } from "@/utils/formTypes";
+
 import {
   Form,
   FormControl,
@@ -9,20 +17,10 @@ import {
   FormMessage,
 } from "../ui/form";
 import { Input } from "../ui/input";
-import { Button } from "../ui/button";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
-import { contactSchema } from "@/lib/validation/schemas/contactSchema";
-import { zodResolver } from "@hookform/resolvers/zod";
 import { Textarea } from "../ui/textarea";
-import { ActionData } from "@/utils/formTypes";
-import { createContact } from "@/lib/actions/contantForm";
 import FormSubmited from "./FormSubmited";
-interface Props {
-  
-}
 
-const ContactForm = (props: Props) => {
+const ContactForm = () => {
   const form = useForm<z.infer<typeof contactSchema>>({
     resolver: zodResolver(contactSchema),
     defaultValues: {

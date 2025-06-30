@@ -1,14 +1,10 @@
-import NextAuth, { AuthOptions } from "next-auth";
-import GoogleProvider from "next-auth/providers/google";
-import userModel, { UserInterface } from "@/lib/db/models/userModel";
-import { Session } from "inspector";
-import { JWT } from "next-auth";
+import { AuthOptions } from "next-auth";
+import userModel from "@/lib/db/models/userModel";
 import CredentialsProvider from "next-auth/providers/credentials";
-import bcrypt from "bcrypt";
+import { compare } from "bcrypt";
 import { connectDB } from "@/lib/db/db";
-
 import { MongoDBAdapter } from "@auth/mongodb-adapter";
-import clientPromise from "../db/MongoDbClient";
+import clientPromise from "@/lib/db/MongoDbClient";
 
 export const authOptions: AuthOptions = {
   providers: [
@@ -18,11 +14,11 @@ export const authOptions: AuthOptions = {
         email: {
           label: "email",
           type: "text",
-          placeholder: "ایمیل خود را وارد کنید",
+          placeholder: "Enter your email",
         },
         password: { label: "Password", type: "password" },
       },
-      async authorize(credentials, req) {
+      async authorize(credentials) {
         await connectDB();
 
         const findedUser = await userModel
@@ -30,8 +26,9 @@ export const authOptions: AuthOptions = {
           .select("+password");
         if (!findedUser) throw new Error("NATIONALCODE_NOT_FOUND");
 
-        const successCompare = await bcrypt.compare(
-          credentials?.password!,
+        if (!credentials?.password) throw new Error("PASSWORD_NOT_FOUND");
+        const successCompare = await compare(
+          credentials?.password,
           findedUser.password
         );
         if (!successCompare) throw new Error("CREDENTIALS_MATCH_ERROR");
@@ -62,7 +59,7 @@ export const authOptions: AuthOptions = {
     strategy: "jwt",
   },
   callbacks: {
-    async signIn({ user, account, profile }) {
+    async signIn({ user }) {
       if (user) {
         return true;
       } else {

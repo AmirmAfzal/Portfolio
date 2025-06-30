@@ -1,5 +1,5 @@
-import Link from "next/link";
 import React from "react";
+import Link from "next/link";
 import { twMerge } from "tailwind-merge";
 import Icon from "../ui/Icon";
 
@@ -12,12 +12,12 @@ const TalkButton = (props: Props) => {
     <Link
       href={"/"}
       className={twMerge(
-        "btn btn-primary from-primary to-secondary  px-16 ",
+        "btn btn-primary from-primary to-secondary px-16",
         props.className
       )}
     >
       <Icon icon="mynaui:sparkles-solid" width={24} />
-      Let's talk
+      Let&apos;s talk
     </Link>
   );
 };

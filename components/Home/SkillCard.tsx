@@ -1,13 +1,13 @@
 import React from "react";
-import Icon from "../ui/Icon";
+
 import { SkillInterface } from "@/lib/data/skills";
+
+import Icon from "../ui/Icon";
 import TalkButton from "./TalkButton";
 
-interface Props extends SkillInterface {}
-
-const SkillCard = (props: Props) => {
+const SkillCard = (props: SkillInterface) => {
   return (
-    <div className="flex w-full flex-col justify-between rounded-2xl border-2 border-[#717171]/20 border-opacity-20 bg-base-200/20 px-8 pb-8 pt-12">
+    <div className="border-opacity-20 bg-base-200/20 flex w-full flex-col justify-between rounded-2xl border-2 border-[#717171]/20 px-8 pt-12 pb-8">
       <div className="flex w-full flex-col">
         <div className="flex flex-row items-center gap-4">
           <Icon
@@ -20,7 +20,7 @@ const SkillCard = (props: Props) => {
         <ul className="mt-8">
           {props.tools.map((tool, index) => (
             <li className="flex flex-row items-center gap-4 pl-4" key={index}>
-              <div className="h-1 w-1 rounded-full bg-primary"></div>
+              <div className="bg-primary h-1 w-1 rounded-full"></div>
               <span className="font-light opacity-80">{tool}</span>
             </li>
           ))}

@@ -1,13 +1,13 @@
 import React from "react";
-import HeroTitle from "./HeroTitle";
+
 import { projects } from "@/lib/data/projects";
+
+import HeroTitle from "./HeroTitle";
 import ProjectCard from "./ProjectCard";
 
-interface Props {}
-
-const ProjectSection = (props: Props) => {
+const ProjectSection = () => {
   return (
-    <div className="relative z-20 mt-64 container mx-auto flex flex-col items-center justify-center">
+    <div className="relative z-20 container mx-auto mt-64 flex flex-col items-center justify-center">
       <HeroTitle
         title="MY PROJECTS"
         subtitle="Some Of My Projects"

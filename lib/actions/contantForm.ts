@@ -1,18 +1,18 @@
 "use server";
+
 import { ActionData } from "@/utils/formTypes";
+
 import { connectDB } from "../db/db";
-import { contactSchema } from "../validation/schemas/contactSchema";
 import contactModel from "../db/models/contactModel";
+import { contactSchema } from "../validation/schemas/contactSchema";
 
 export const createContact = async (
   prevState: ActionData,
   formData: FormData
 ): Promise<ActionData> => {
   await connectDB();
-  const data: Record<string, any> = {};
-  formData.forEach((value: any, key: string) => {
-    data[key] = value;
-  });
+  const data = Object.fromEntries(formData.entries());
+
   const result = await contactSchema.safeParse(data);
   if (!result.success) {
     return {
@@ -26,7 +26,7 @@ export const createContact = async (
     email: result.data.email,
     subject: result.data.subject,
     message: result.data.message,
-  })
+  });
 
   return {
     message: "SUCCESS",

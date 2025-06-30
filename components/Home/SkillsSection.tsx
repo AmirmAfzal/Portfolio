@@ -1,16 +1,16 @@
-import { skills } from "@/lib/data/skills";
 import React from "react";
-import SkillCard from "./SkillCard";
+
+import { skills } from "@/lib/data/skills";
+
 import HeroTitle from "./HeroTitle";
+import SkillCard from "./SkillCard";
 
-interface Props {}
-
-const SkillsSection = (props: Props) => {
+const SkillsSection = () => {
   return (
     <div className="relative z-20 container mx-auto flex mt-32 flex-col items-center" id="skills">
       <HeroTitle
         title="MY SKILLS"
-        subtitle="Thing I Am Good At"
+        subtitle="Things I Am Good At"
         description="All these skills have been developed through years of hands-on
           experience."
       />

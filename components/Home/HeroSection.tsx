@@ -1,18 +1,16 @@
-import Link from "next/link";
 import React from "react";
+import Link from "next/link";
+
 import Icon from "../ui/Icon";
 import TalkButton from "./TalkButton";
-import Image from "next/image";
 
-interface Props {}
-
-const HeroSection = (props: Props) => {
+const HeroSection = () => {
   return (
     <section className="container mx-auto grid h-screen grid-cols-2 items-center gap-8">
       <div className="flex flex-col">
         <h1 className="text-7xl leading-relaxed">
-          Hey! My Name is <br />{" "}
-          <span className="text-primary text-8xl font-bold">Amirreza</span>{" "}
+          Hey! My Name is <br />
+          <span className="text-primary text-8xl font-bold">Amirreza</span>
         </h1>
         <p className="mt-4 opacity-60">
           I am a full stack developer specializing in Next.js, Nest.js, and
@@ -29,13 +27,13 @@ const HeroSection = (props: Props) => {
           </Link>
         </div>
       </div>
-      <Image
+      {/* <Image
         width={1000}
         height={1000}
         className="w-full"
         src={"/images/about.jpg"}
         alt=""
-      />
+      /> */}
     </section>
   );
 };

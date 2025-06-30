@@ -15,9 +15,8 @@ gsap.registerPlugin(
   SplitText,
   ScrambleTextPlugin
 );
-interface Props {}
 
-const Background = (props: Props) => {
+const Background = () => {
   useGSAP(() => {
     // let descriptionSplit = new SplitText("#hero-description", {
     //   type: "words",
@@ -45,7 +44,6 @@ const Background = (props: Props) => {
     //     pinSpacing: true,
     //   },
     // });
-
     // for (let [index, title] of titleSplit.words.entries()) {
     //   tl.add(`text-${index}`);
     //   tl.from(
@@ -85,7 +83,6 @@ const Background = (props: Props) => {
     //   // autoAlpha: 0,
     //   // duration: 1,
     // });
-
     // tl.from(descriptionSplit.words, {
     //   yPercent: "100",
     //   autoAlpha: 0,

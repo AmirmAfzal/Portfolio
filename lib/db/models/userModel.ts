@@ -1,4 +1,4 @@
-import mongoose, { Document, Model, ObjectId, Schema } from "mongoose";
+import mongoose, { Document,  Schema } from "mongoose";
 
 
 export interface UserInterface extends mongoose.Document {

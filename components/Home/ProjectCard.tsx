@@ -1,11 +1,11 @@
-import { ProjectInterface } from "@/lib/data/projects";
 import React from "react";
-import TalkButton from "./TalkButton";
 import Image from "next/image";
 
-interface Props extends ProjectInterface {}
+import { ProjectInterface } from "@/lib/data/projects";
 
-const ProjectCard = (props: Props) => {
+import TalkButton from "./TalkButton";
+
+const ProjectCard = (props: ProjectInterface) => {
   return (
     <div className="from-base-200 to-primary/20 grid grid-cols-2 gap-4 overflow-hidden rounded-3xl bg-linear-to-r">
       <div className="flex flex-col py-16 pl-32">

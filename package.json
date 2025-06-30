@@ -43,6 +43,7 @@
     "embla-carousel-react": "^8.5.2",
     "formdata-node": "^6.0.3",
     "gsap": "^3.13.0",
+    "html2canvas": "^1.4.1",
     "iconify-icon": "^3.0.0",
     "jalali-moment": "^3.3.11",
     "lottie-react": "^2.4.1",

@@ -2,6 +2,7 @@
 import React from "react";
 import Lottie from "lottie-react";
 import SubmitAnimation from "@/public/animations/email-sent.json";
+
 interface Props {
   name: string;
 }
@@ -15,8 +16,9 @@ const FormSubmited = (props: Props) => {
         className="h-64 w-64"
       />
       <span className="text-center">
-        Thank you <span className="text-primary font-medium">{props.name}</span> for contacting me,<br/> I will contact
-        you back.
+        Thank you <span className="text-primary font-medium">{props.name}</span>{" "}
+        for contacting me,
+        <br /> I will contact you back.
       </span>
     </div>
   );
