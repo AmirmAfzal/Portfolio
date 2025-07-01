@@ -2,10 +2,10 @@ import React from "react";
 
 import { skills } from "@/lib/data/skills";
 
-import HeroTitle from "./HeroTitle";
+import HeroTitle from "./HeroTitle.client";
 import SkillCard from "./SkillCard";
 
-const SkillsSection = () => {
+const SkillsSectionContent = () => {
   return (
     <div className="relative z-20 container mx-auto flex mt-32 flex-col items-center" id="skills">
       <HeroTitle
@@ -23,4 +23,4 @@ const SkillsSection = () => {
   );
 };
 
-export default SkillsSection;
+export default SkillsSectionContent;

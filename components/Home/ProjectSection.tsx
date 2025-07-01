@@ -2,10 +2,10 @@ import React from "react";
 
 import { projects } from "@/lib/data/projects";
 
-import HeroTitle from "./HeroTitle";
+import HeroTitle from "./HeroTitle.client";
 import ProjectCard from "./ProjectCard";
 
-const ProjectSection = () => {
+const ProjectSectionContent = () => {
   return (
     <div className="relative z-20 container mx-auto mt-64 flex flex-col items-center justify-center">
       <HeroTitle
@@ -22,4 +22,4 @@ const ProjectSection = () => {
   );
 };
 
-export default ProjectSection;
+export default ProjectSectionContent;

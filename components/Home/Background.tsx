@@ -40,8 +40,6 @@ const Background = () => {
     //     trigger: "#hero",
     //     start: "center center",
     //     end: "+=4800px center",
-    //     markers: true,
-    //     pinSpacing: true,
     //   },
     // });
     // for (let [index, title] of titleSplit.words.entries()) {

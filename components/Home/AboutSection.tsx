@@ -1,8 +1,8 @@
 import React from "react";
 import Image from "next/image";
-import HeroTitle from "./HeroTitle";
+import HeroTitle from "./HeroTitle.client";
 
-const AboutSection = () => {
+const AboutSectionContent = () => {
   return (
     <div className="relative z-20 container mx-auto mt-64 grid grid-cols-2 items-center gap-8">
       <div className="flex flex-col">
@@ -12,7 +12,7 @@ const AboutSection = () => {
           subtitle="Get To Know Me Better"
           description="My journey in few words"
         />
-        <p className="text-base-content/80 mt-8 leading-relaxed">
+        <p className="text-base-content/80 mt-8 leading-relaxed" id="about-description">
           Hi, I&apos;m a passionate and detail-oriented developer with a strong
           interest in building creative, user-focused digital experiences. I
           specialize in modern web technologies like React, Next.js, and
@@ -32,10 +32,11 @@ const AboutSection = () => {
           width={500}
           alt={"About Me"}
           className="aspect-square rounded-lg object-cover shadow-lg"
+          id="about-image"
         />
       </div>
     </div>
   );
 };
 
-export default AboutSection;
+export default AboutSectionContent;

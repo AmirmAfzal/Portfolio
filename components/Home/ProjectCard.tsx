@@ -7,7 +7,7 @@ import TalkButton from "./TalkButton";
 
 const ProjectCard = (props: ProjectInterface) => {
   return (
-    <div className="from-base-200 to-primary/20 grid grid-cols-2 gap-4 overflow-hidden rounded-3xl bg-linear-to-r">
+    <div className="from-base-200 to-primary/20 grid grid-cols-2 gap-4 overflow-hidden rounded-3xl bg-linear-to-r" id="project-card">
       <div className="flex flex-col py-16 pl-32">
         <div className="text-primary flex flex-row items-center gap-4 text-sm font-semibold">
           <span>{props.company}</span>

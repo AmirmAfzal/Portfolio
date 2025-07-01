@@ -8,7 +8,7 @@ interface Props {
   className?: string;
 }
 
-const HeroTitle = (props: Props) => {
+const HeroTitleContent = (props: Props) => {
   return (
     <div className={twMerge("flex flex-col items-center ", props.className)}>
       <span className="text-primary tracking-[0.3em] hero-title">{props.title}</span>
@@ -18,4 +18,4 @@ const HeroTitle = (props: Props) => {
   );
 };
 
-export default HeroTitle;
+export default HeroTitleContent;

@@ -1,9 +1,9 @@
 import React from "react";
 
 import ContactForm from "./ContactForm";
-import HeroTitle from "./HeroTitle";
+import HeroTitle from "./HeroTitle.client";
 
-const ContactSection = () => {
+const ContactSectionContent = () => {
   return (
     <div className="relative z-20 container mx-auto mt-32 flex flex-col items-center">
       <HeroTitle
@@ -16,4 +16,4 @@ const ContactSection = () => {
   );
 };
 
-export default ContactSection;
+export default ContactSectionContent;
