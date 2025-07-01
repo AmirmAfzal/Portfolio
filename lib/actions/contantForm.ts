@@ -1,6 +1,6 @@
 "use server";
 
-import { ActionData } from "@/utils/formTypes";
+import { ActionData } from "@/lib/formTypes";
 
 import { connectDB } from "../db/db";
 import contactModel from "../db/models/contactModel";

@@ -6,7 +6,7 @@ import { z } from "zod";
 
 import { createContact } from "@/lib/actions/contantForm";
 import { contactSchema } from "@/lib/validation/schemas/contactSchema";
-import { ActionData } from "@/utils/formTypes";
+import { ActionData } from "@/lib/formTypes";
 
 import {
   Form,
