@@ -7,7 +7,7 @@ import SkillCard from "./SkillCard";
 
 const SkillsSectionContent = () => {
   return (
-    <div className="relative z-20 container mx-auto flex mt-32 flex-col items-center" id="skills">
+    <div className="relative z-20 container mx-auto flex mt-64 flex-col items-center" id="skills">
       <HeroTitle
         title="MY SKILLS"
         subtitle="Things I Am Good At"
