@@ -1,7 +1,5 @@
 import React from "react";
-import Link from "next/link";
 
-import Icon from "../ui/Icon";
 import TalkButton from "./TalkButton";
 import ViewSkillButton from "./ViewSkillButton";
 
