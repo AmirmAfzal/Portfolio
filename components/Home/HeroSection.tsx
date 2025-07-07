@@ -6,7 +6,7 @@ import TalkButton from "./TalkButton";
 
 const HeroSection = () => {
   return (
-    <section className="container mx-auto grid h-screen grid-cols-2 items-center gap-8">
+    <section className="container mx-auto mt-32 grid grid-cols-2 items-center gap-8">
       <div className="flex flex-col">
         <h1 className="text-7xl leading-relaxed">
           Hey! My Name is <br />
