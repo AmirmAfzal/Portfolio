@@ -1,6 +1,5 @@
 "use client";
 import gsap from "gsap/all";
-import Link from "next/link";
 import React from "react";
 
 interface Props {
