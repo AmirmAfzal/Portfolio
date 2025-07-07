@@ -53,7 +53,7 @@ const AboutSection = () => {
   );
 
   return (
-    <div ref={root}>
+    <div ref={root} id="about">
       <AboutSectionContent />
     </div>
   );

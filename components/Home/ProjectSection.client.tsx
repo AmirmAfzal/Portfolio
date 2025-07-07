@@ -35,7 +35,7 @@ const ProjectSection = () => {
   );
 
   return (
-    <div ref={root}>
+    <div ref={root} id="projects">
       <ProjectSectionContent />
     </div>
   );

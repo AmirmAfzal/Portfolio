@@ -31,7 +31,7 @@ const ContactSection = () => {
   );
 
   return (
-    <div ref={root}>
+    <div ref={root} id="contact">
       <ContactSectionContent />
     </div>
   );

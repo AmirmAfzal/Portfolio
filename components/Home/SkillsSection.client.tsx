@@ -15,9 +15,9 @@ const SkillsSection = () => {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: root.current,
-          start: "top 20%",
+          start: "top 30%",
           end: "bottom center",
-          // markers: true, // Uncomment for debugging
+          
         },
       });
 
