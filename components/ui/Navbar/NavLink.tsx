@@ -1,3 +1,5 @@
+"use client";
+import gsap from "gsap/all";
 import Link from "next/link";
 import React from "react";
 
@@ -7,13 +9,13 @@ interface Props {
 }
 
 const NavLink = (props: Props) => {
+  const handleClick = () => {
+    gsap.to(window, { duration: 1, scrollTo: { y: props.href, offsetY: 100 } });
+  };
   return (
-    <Link
-      href={props.href}
-      className="relative z-10 text-lg font-medium"
-    >
+    <button className="btn btn-ghost z-30 btn-lg font-medium" onClick={handleClick}>
       {props.children}
-    </Link>
+    </button>
   );
 };
 

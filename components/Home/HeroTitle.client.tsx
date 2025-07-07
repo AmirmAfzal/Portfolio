@@ -40,7 +40,7 @@ const HeroTitle = (props: Props) => {
             { y: 50, opacity: 0 },
             { duration: 0.5, opacity: 1, y: 0, stagger: 0.05 }
           );
-        });
+        } , ">-0.3");
       gsap.utils
         .toArray<HTMLElement>(".hero-description", root.current)
         .forEach((el) => {
@@ -54,7 +54,7 @@ const HeroTitle = (props: Props) => {
               y: 0,
             }
           );
-        });
+        } , ">-0.3");
     },
     { scope: root }
   );
