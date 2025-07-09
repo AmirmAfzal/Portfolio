@@ -49,14 +49,14 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="mt-16 flex w-full justify-center">
+    <div className="mt-10 sm:mt-16 flex w-full justify-center px-2 sm:px-0">
       {state.message === "SUCCESS" ? (
         <FormSubmited name={form.getValues("name").split(" ")[0]} />
       ) : (
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(handleSumbit)}
-            className="grid grid-cols-2 gap-x-4 gap-y-8 rounded-3xl"
+            className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-8 rounded-3xl w-full max-w-xl sm:max-w-2xl md:max-w-3xl p-4 sm:p-8"
           >
             <FormField
               control={form.control}
@@ -88,7 +88,7 @@ const ContactForm = () => {
               control={form.control}
               name="subject"
               render={({ field }) => (
-                <FormItem className="col-span-2">
+                <FormItem className="col-span-1 sm:col-span-2">
                   <FormLabel>Subject *</FormLabel>
                   <FormControl>
                     <Input
@@ -104,7 +104,7 @@ const ContactForm = () => {
               control={form.control}
               name="message"
               render={({ field }) => (
-                <FormItem className="col-span-2">
+                <FormItem className="col-span-1 sm:col-span-2">
                   <FormLabel>Message *</FormLabel>
                   <FormControl>
                     <Textarea
@@ -118,7 +118,7 @@ const ContactForm = () => {
               )}
             />
             {state.errors.length > 0 && (
-              <div className="col-span-2 flex flex-col">
+              <div className="col-span-1 sm:col-span-2 flex flex-col">
                 {state.errors.slice(0, 2).map((error, index) => (
                   <div
                     className="text-error flex flex-row items-center gap-2"
@@ -131,7 +131,7 @@ const ContactForm = () => {
               </div>
             )}
             <button
-              className="btn btn-primary btn-soft col-span-2 gap-2"
+              className="btn btn-primary btn-soft col-span-1 sm:col-span-2 gap-2 text-xs sm:text-sm md:text-base"
               disabled={pending}
             >
               {pending && <div className="loading loading-spinner"></div>}

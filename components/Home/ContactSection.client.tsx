@@ -5,7 +5,7 @@ import gsap from "gsap";
 import { ScrollTrigger, SplitText } from "gsap/all";
 import ContactSectionContent from "./ContactSection";
 
-gsap.registerPlugin(useGSAP, ScrollTrigger, SplitText);
+gsap.registerPlugin(ScrollTrigger, SplitText);
 
 const ContactSection = () => {
   const root = useRef<HTMLDivElement>(null);
