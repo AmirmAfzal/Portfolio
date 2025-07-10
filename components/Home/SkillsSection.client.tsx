@@ -12,12 +12,12 @@ const SkillsSection = () => {
 
   useGSAP(
     () => {
+
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: root.current,
-          start: "top 30%",
+          start: window.innerWidth > 1024 ? "top 30%" : "top 90%",
           end: "bottom center",
-          
         },
       });
 

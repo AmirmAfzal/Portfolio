@@ -12,7 +12,6 @@ const HeroSection = () => {
   useGSAP(
     () => {
       const tl = gsap.timeline();
-      // Animate title words
       const split = new SplitText("#hero-section-title", { type: "words" });
       tl.from(split.words, {
         opacity: 0,
@@ -21,7 +20,6 @@ const HeroSection = () => {
         ease: "power3.out",
         stagger: 0.08,
       });
-      // Animate description
       tl.from(
         ".hero-description",
         {
@@ -30,9 +28,8 @@ const HeroSection = () => {
           duration: 0.8,
           ease: "power2.out",
         },
-        ">-0.3" // start slightly before previous ends
+        ">-0.3" 
       );
-      // Animate buttons with stagger
       tl.from(
         ".hero-buttons > *",
         {
@@ -42,7 +39,7 @@ const HeroSection = () => {
           ease: "power2.out",
           stagger: 0.15,
         },
-        ">-0.2" // start slightly before previous ends
+        ">-0.2" 
       );
     },
     { scope: root }

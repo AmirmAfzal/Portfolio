@@ -15,7 +15,7 @@ const ProjectSection = () => {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: root.current,
-          start: "top 20%",
+          start:window.innerWidth > 1024 ? "top 20%" : "top 90%",
           end: "bottom center",
         },
       });

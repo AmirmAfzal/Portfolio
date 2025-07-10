@@ -5,7 +5,7 @@ import gsap from "gsap";
 import { ScrollTrigger, SplitText } from "gsap/all";
 import ContactSectionContent from "./ContactSection";
 
-gsap.registerPlugin(useGSAP, ScrollTrigger, SplitText);
+gsap.registerPlugin(ScrollTrigger, SplitText);
 
 const ContactSection = () => {
   const root = useRef<HTMLDivElement>(null);
@@ -15,7 +15,7 @@ const ContactSection = () => {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: root.current,
-          start: "top 30%",
+          start:window.innerWidth > 1024 ? "top 30%" : "top 90%",
           end: "bottom center",
         },
       });
