@@ -12,7 +12,7 @@ const NavLink = (props: Props) => {
     gsap.to(window, { duration: 1, scrollTo: { y: props.href, offsetY: 100 } });
   };
   return (
-    <button className="btn btn-ghost z-30 btn-lg font-medium" onClick={handleClick}>
+    <button className="btn btn-ghost z-30 btn-lg font-medium hidden lg:flex" onClick={handleClick}>
       {props.children}
     </button>
   );

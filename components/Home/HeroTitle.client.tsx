@@ -19,7 +19,7 @@ const HeroTitle = (props: Props) => {
           trigger: ".hero-subtitle",
           start: window.innerWidth > 1024 ? "top center" : "top bottom",
           end: "bottom center",
-          markers: true,
+
         },
       });
 
