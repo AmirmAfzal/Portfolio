@@ -12,23 +12,28 @@ const SkillsSection = () => {
 
   useGSAP(
     () => {
-
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: root.current,
-          start: window.innerWidth > 1024 ? "top 30%" : "top 90%",
-          end: "bottom center",
-        },
+      const mm = gsap.matchMedia();
+      mm.add("(min-width: 1024px)", () => {
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: root.current,
+            start: "top 30%",
+            end: "bottom center",
+          },
+        });
+        gsap.utils
+          .toArray<HTMLElement>(".grid > div", root.current)
+          .forEach((el, i) => {
+            tl.fromTo(
+              el,
+              { y: 40, opacity: 0 },
+              { duration: 0.4, opacity: 1, y: 0, delay: i * 0.05 },
+              ">"
+            );
+          });
       });
 
-      gsap.utils.toArray<HTMLElement>(".grid > div", root.current).forEach((el, i) => {
-        tl.fromTo(
-          el,
-          { y: 40, opacity: 0 },
-          { duration: 0.4, opacity: 1, y: 0, delay: i * 0.05 },
-          ">"
-        );
-      });
+      return () => mm.revert();
     },
     { scope: root }
   );
@@ -40,4 +45,4 @@ const SkillsSection = () => {
   );
 };
 
-export default SkillsSection; 
+export default SkillsSection;

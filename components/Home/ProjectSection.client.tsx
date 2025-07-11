@@ -12,24 +12,60 @@ const ProjectSection = () => {
 
   useGSAP(
     () => {
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: root.current,
-          start:window.innerWidth > 1024 ? "top 20%" : "top 90%",
-          end: "bottom center",
-        },
-      });
-
-      gsap.utils
-        .toArray<HTMLElement>(".grid > div", root.current)
-        .forEach((el, i) => {
-          tl.fromTo(
-            el,
-            { y: 40, opacity: 0 },
-            { duration: 0.4, opacity: 1, y: 0, delay: i * 0.05 },
-            ">"
-          );
+      const mm = gsap.matchMedia();
+      mm.add("(min-width: 1024px)", () => {
+        const tl = gsap.timeline({
+          // scrollTrigger: {
+          //   trigger: root.current,
+          //   start: "top 20%",
+          //   end: "bottom center",
+          // },
         });
+        // gsap.utils
+        //   .toArray<HTMLElement>(".grid > div", root.current)
+        //   .forEach((el, i) => {
+        //     gsap.fromTo(
+        //       el,
+        //       {
+        //         y: 40,
+        //         opacity: 0,
+        //         scrollTrigger: {
+        //           trigger: el,
+        //           start: "top 10%",
+        //           end: "bottom center",
+        //           markers : true,
+        //           id: `project-${i + 1}`
+        //         },
+        //       },
+        //       { duration: 0.4, opacity: 1, y: 0 },
+        //       // ">"
+        //     );
+        //   });
+        gsap.utils
+          .toArray<HTMLElement>(".project-card", root.current)
+          .forEach((el, i) => {
+            console.log(el);
+            gsap.fromTo(
+              el,
+              {
+                x: -200,
+                opacity: 0,
+              },
+              {
+                duration: 1,
+                opacity: 1,
+                x: 0,
+                scrollTrigger: {
+                  trigger: el,
+                  start: "10% 70%",
+                  end: "bottom center",
+                },
+              }
+              // ">"
+            );
+          });
+      });
+      return () => mm.revert();
     },
     { scope: root }
   );
