@@ -14,48 +14,51 @@ const HeroTitle = (props: Props) => {
 
   useGSAP(
     () => {
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: ".hero-subtitle",
-          start: window.innerWidth > 1024 ? "top center" : "top bottom",
-          end: "bottom center",
-
-        },
-      });
-
-      gsap.utils
-        .toArray<HTMLElement>(".hero-title", root.current)
-        .forEach((el) => {
-          tl.fromTo(
-            el,
-            { y: -30, opacity: 0, scale: 2, fontWeight: 600 },
-            { duration: 0.5, opacity: 1, y: 0, scale: 1, fontWeight: 300 }
-          );
+      const mm = gsap.matchMedia();
+      mm.add("(min-width: 1024px)", () => {
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: ".hero-subtitle",
+            start: "top 80%",
+            end: "bottom center",
+          },
         });
-      gsap.utils
-        .toArray<HTMLElement>(".hero-subtitle", root.current)
-        .forEach((el) => {
-          const text = new SplitText(el, { type: "words" });
-          tl.fromTo(
-            text.words,
-            { y: 50, opacity: 0 },
-            { duration: 0.5, opacity: 1, y: 0, stagger: 0.05 }
-          );
-        }, ">-0.3");
-      gsap.utils
-        .toArray<HTMLElement>(".hero-description", root.current)
-        .forEach((el) => {
-          const text = new SplitText(el, { type: "words" });
-          tl.fromTo(
-            text.words,
-            { opacity: 0, y: -30 },
-            {
-              duration: 0.5,
-              opacity: 1,
-              y: 0,
-            }
-          );
-        }, ">-0.3");
+
+        gsap.utils
+          .toArray<HTMLElement>(".hero-title", root.current)
+          .forEach((el) => {
+            tl.fromTo(
+              el,
+              { y: -30, opacity: 0, scale: 2, fontWeight: 600 },
+              { duration: 0.5, opacity: 1, y: 0, scale: 1, fontWeight: 300 }
+            );
+          });
+        gsap.utils
+          .toArray<HTMLElement>(".hero-subtitle", root.current)
+          .forEach((el) => {
+            const text = new SplitText(el, { type: "words" });
+            tl.fromTo(
+              text.words,
+              { y: 50, opacity: 0 },
+              { duration: 0.5, opacity: 1, y: 0, stagger: 0.05 }
+            );
+          }, ">-0.3");
+        gsap.utils
+          .toArray<HTMLElement>(".hero-description", root.current)
+          .forEach((el) => {
+            const text = new SplitText(el, { type: "words" });
+            tl.fromTo(
+              text.words,
+              { opacity: 0, y: -30 },
+              {
+                duration: 0.5,
+                opacity: 1,
+                y: 0,
+              }
+            );
+          }, ">-0.3");
+      });
+      return () => mm.revert();
     },
     { scope: root }
   );

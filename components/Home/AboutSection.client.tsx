@@ -12,42 +12,48 @@ const AboutSection = () => {
 
   useGSAP(
     () => {
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: root.current,
-          start:window.innerWidth > 1024 ? "top 30%" : "top 90%",
-          end: "bottom center",
-        },
+      const mm = gsap.matchMedia();
+      mm.add("(min-width: 1024px)", () => {
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: root.current,
+            start: "top 30%",
+            end: "bottom center",
+          },
+        });
+        const text = new SplitText("#about-description", { type: "lines" });
+        tl.add("start");
+        tl.fromTo(
+          text.lines,
+          {
+            y: 40,
+            opacity: 0,
+          },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.6,
+            stagger: 0.05,
+            ease: "power2.inOut",
+          },
+          "start"
+        );
+        tl.fromTo(
+          "#about-image",
+          {
+            y: 100,
+            x: 100,
+            opacity: 0,
+          },
+          {
+            opacity: 1,
+            y: 0,
+            x: 0,
+          },
+          "start"
+        );
       });
-      const text = new SplitText("#about-description", { type: "lines" });
-      tl.add("start")
-      tl.fromTo(
-        text.lines,
-        {
-          y: 40,
-          opacity: 0,
-        },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 0.6,
-          stagger: 0.05,
-          ease: "power2.inOut",
-        } , "start"
-      );
-      tl.fromTo(
-        "#about-image",
-        {
-          y: 100,
-          x: 100,
-          opacity : 0
-        },
-        {
-            opacity : 1,
-          y: 0,
-          x: 0,
-        } , "start"
-      );
+      return () => mm.revert();
     },
     { scope: root }
   );

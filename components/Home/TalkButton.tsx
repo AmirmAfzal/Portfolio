@@ -19,7 +19,7 @@ const TalkButton = (props: Props) => {
     <button
       onClick={handleClick}
       className={twMerge(
-        "btn btn-primary from-primary to-secondary px-16",
+        "btn btn-primary from-primary to-secondary px-16 z-50",
         props.className
       )}
     >
