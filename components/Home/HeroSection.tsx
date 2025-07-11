@@ -2,11 +2,12 @@ import React from "react";
 
 import TalkButton from "./TalkButton";
 import ViewSkillButton from "./ViewSkillButton";
+import Image from "next/image";
 
 const HeroSectionContent = () => {
   return (
-    <section className="container mx-auto grid min-h-[70vh] grid-cols-1 items-center gap-8 px-4 md:grid-cols-2 md:px-0">
-      <div className="flex flex-col">
+    <section className="container mx-auto grid min-h-[70vh] grid-cols-1 items-center gap-8 lg:gap-16 px-4 md:grid-cols-2 md:px-0">
+      <div className="flex flex-col order-2">
         <h1
           className="text-5xl leading-tight md:text-7xl md:leading-relaxed"
           id="hero-section-title"
@@ -31,13 +32,13 @@ const HeroSectionContent = () => {
           <ViewSkillButton />
         </div>
       </div>
-      {/* <Image
+      <Image
         width={1000}
         height={1000}
-        className="w-full"
-        src={"/images/about.jpg"}
+        className="w-full aspect-square object-cover order-1"
+        src={"/images/hero.png"}
         alt=""
-      /> */}
+      />
     </section>
   );
 };
