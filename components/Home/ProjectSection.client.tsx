@@ -14,13 +14,13 @@ const ProjectSection = () => {
     () => {
       const mm = gsap.matchMedia();
       mm.add("(min-width: 1024px)", () => {
-        const tl = gsap.timeline({
+        // const tl = gsap.timeline({
           // scrollTrigger: {
           //   trigger: root.current,
           //   start: "top 20%",
           //   end: "bottom center",
           // },
-        });
+        // });
         // gsap.utils
         //   .toArray<HTMLElement>(".grid > div", root.current)
         //   .forEach((el, i) => {
@@ -43,7 +43,7 @@ const ProjectSection = () => {
         //   });
         gsap.utils
           .toArray<HTMLElement>(".project-card", root.current)
-          .forEach((el, i) => {
+          .forEach((el,) => {
             console.log(el);
             gsap.fromTo(
               el,
