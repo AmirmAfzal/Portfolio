@@ -10,7 +10,7 @@ const ProjectSectionContent = () => {
     <div className="relative z-20 container mx-auto mt-64 flex flex-col p-4 md:p-0">
       <HeroTitle
         title="MY PROJECTS"
-        subtitle="Some Of My Projects"
+        subtitle="Some Of My Latest Projects"
         description="You can see some of my projects I have done in the past."
       />
       <div className="mt-10 flex w-full flex-col gap-8 md:mt-16">

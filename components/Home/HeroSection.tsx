@@ -35,7 +35,7 @@ const HeroSectionContent = () => {
       <Image
         width={1000}
         height={1000}
-        className="w-full aspect-square object-cover order-1"
+        className="w-full aspect-square object-cover order-1 rounded-[50px]"
         src={"/images/hero.png"}
         alt=""
       />
