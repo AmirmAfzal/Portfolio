@@ -31,7 +31,7 @@ const AboutSectionContent = () => {
           height={500}
           width={500}
           alt={"About Me"}
-          className="aspect-square rounded-lg object-cover shadow-lg"
+          className="aspect-square rounded-[50px] object-cover shadow-lg"
           id="about-image"
         />
       </div>

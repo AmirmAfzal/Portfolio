@@ -7,10 +7,51 @@ export interface ProjectInterface {
   year: number;
 }
 export const projects: ProjectInterface[] = [
+  
+  {
+    title: "Ultimate Productivity Suite",
+    description:
+      "A comprehensive browser-based productivity platform featuring a robust to-do list, integrated workout tracker, advanced note-taking capabilities, and powerful analytics. Designed to help users manage tasks, track fitness progress, organize notes, and gain actionable insights—all in one seamless experience. Built for performance, scalability, and user engagement.",
+    image: "/images/projects/todoapp.png",
+    tools: [
+      "Next.js",
+      "Mongoose",
+      "MongoDB",
+      "Tailwind CSS",
+      "Framer Motion",
+      "Zustand",
+      "NextAuth",
+      "Chart.js",
+      "Socket.IO",
+      "TypeScript",
+      "Vercel",
+    ],
+    company: "Todo Rda",
+    year: 2024,
+  },
+  {
+    title: "Digital Advertising Studio Website",
+    description:
+      "A modern, visually engaging website crafted for a digital advertising studio, designed and developed directly from a Figma prototype. The site showcases the studio’s portfolio, services, and creative process, with a focus on high performance, responsive design, and seamless user experience. Built to highlight the brand’s unique identity and drive client engagement.",
+    image: "/images/projects/digitalstudio.png",
+    tools: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Framer Motion",
+      "Zustand",
+      "NextAuth",
+      "Vercel",
+      "Cloudinary",
+      "Figma",
+    ],
+    company: "Mixord",
+    year: 2025,
+  },
   {
     title: "Holding Company Website",
     description:
-      "A platform for group management and communication, allowing users to create and manage groups, share files, and communicate effectively.",
+      "A modern platform for holding companies to manage groups, share files, and communicate efficiently. Features include a centralized dashboard, secure document management, and an interactive 3D earth model (Three.js) to showcase all companies. Built for scalability, security, and seamless collaboration.",
     image: "/images/projects/group100.jpg",
     tools: [
       "Next.js",
@@ -20,62 +61,13 @@ export const projects: ProjectInterface[] = [
       "NextAuth",
       "Vercel",
       "Cloudinary",
+      "Three.js",
+      "TypeScript",
+      "Framer Motion",
     ],
     company: "Group100",
     year: 2023,
   },
-  {
-    title: "Interactive Web-Based Story Game",
-    description:
-      "A browser-based adventure game with a dynamic story map, asset management system, and daily challenge logic. Built to offer immersive experiences and decision-based progressions.",
-    image: "/images/projects/group100.jpg",
-    tools: [
-      "Next.js",
-      "MongoDB",
-      "Framer Motion",
-      "Tailwind CSS",
-      "Zustand",
-      "NextAuth",
-      "Socket.IO",
-    ],
-    company: "Personal Project",
-    year: 2025,
-  },
-  {
-    title: "Migration Advisory Platform",
-    description:
-      "A data-driven platform that helps users find the best migration path to Germany by analyzing their personal details and preferences.",
-    image: "/images/projects/group100.jpg",
-    tools: [
-      "Next.js",
-      "Node.js",
-      "MongoDB",
-      "Tailwind CSS",
-      "tRPC",
-      "NextAuth",
-      "Prisma",
-      "Docker",
-      "Cloudflare",
-    ],
-    company: "YourBrand (Instagram Migration Page)",
-    year: 2024,
-  },
-  {
-    title: "Beginner-Friendly React Bootcamp Portal",
-    description:
-      "A learning management system for a 30-session React bootcamp. Includes lesson tracking, interactive quizzes, and student progress dashboards.",
-    image: "/images/projects/group100.jpg",
-    tools: [
-      "Next.js",
-      "Firebase",
-      "Tailwind CSS",
-      "Redux Toolkit",
-      "Chart.js",
-      "Stripe",
-      "ShadCN UI",
-    ],
-    company: "Academy Project",
-    year: 2024,
-  },
+
 ];
 
