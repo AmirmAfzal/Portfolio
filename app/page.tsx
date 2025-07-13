@@ -10,7 +10,7 @@ import SkillsSection from "@/components/Home/SkillsSection.client";
 const HomePage = () => {
   return (
     <div>
-      <Background />
+      {/* <Background /> */}
       <HeroSection />
       <SkillsSection />
       <ProjectSection />
