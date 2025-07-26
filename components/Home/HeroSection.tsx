@@ -4,7 +4,11 @@ import TalkButton from "./TalkButton";
 import ViewSkillButton from "./ViewSkillButton";
 import Image from "next/image";
 
-const HeroSectionContent = () => {
+export interface HeroSectionContentProps {
+  s: string;
+}
+
+const HeroSectionContent = ({ s }: HeroSectionContentProps) => {
   return (
     <section className="container mx-auto grid min-h-[70vh] grid-cols-1 items-center gap-8 lg:gap-16 px-4 md:grid-cols-2 md:px-0">
       <div className="flex flex-col order-2">
@@ -14,7 +18,7 @@ const HeroSectionContent = () => {
         >
           Hey! My Name is <br className="hidden md:inline" />
           <span className="text-primary text-5xl font-bold sm:text-6xl md:text-8xl">
-            Amirreza
+            { s=== "true" ? "Milad":"Amirreza"}
           </span>
         </h1>
         <p
@@ -36,7 +40,7 @@ const HeroSectionContent = () => {
         width={1000}
         height={1000}
         className="w-full aspect-square object-cover order-1 rounded-[50px]"
-        src={"/images/hero.png"}
+        src={s === "true" ? "/images/hero2.jpg" : "/images/hero.png"}
         alt=""
       />
     </section>

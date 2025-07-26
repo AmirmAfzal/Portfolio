@@ -7,7 +7,7 @@ import AboutSectionContent from "./AboutSection";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
-const AboutSection = () => {
+const AboutSection = ({ s }: { s: string }) => {
   const root = useRef<HTMLDivElement>(null);
 
   useGSAP(
@@ -60,7 +60,7 @@ const AboutSection = () => {
 
   return (
     <div ref={root} id="about">
-      <AboutSectionContent />
+      <AboutSectionContent s={s} />
     </div>
   );
 };

@@ -2,7 +2,11 @@ import React from "react";
 import Image from "next/image";
 import HeroTitle from "./HeroTitle.client";
 
-const AboutSectionContent = () => {
+export interface AboutSectionContentProps {
+  s: string;
+}
+
+const AboutSectionContent = ({ s }: AboutSectionContentProps) => {
   return (
     <div className="relative z-20 container mx-auto mt-64 grid grid-cols-1 lg:grid-cols-2 items-center gap-8 px-4 lg:px-0">
       <div className="flex flex-col order-2 lg:order-1">
@@ -27,7 +31,7 @@ const AboutSectionContent = () => {
       </div>
       <div className="flex w-full justify-end order-1 lg:order-2">
         <Image
-          src={"/images/about.jpg"}
+          src={s === "true" ? "/images/about2.jpg" : "/images/about.jpg"}
           height={500}
           width={500}
           alt={"About Me"}
