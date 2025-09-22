@@ -31,7 +31,7 @@ const AboutSectionContent = ({ s }: AboutSectionContentProps) => {
       </div>
       <div className="flex w-full justify-end order-1 lg:order-2">
         <Image
-          src={s === "true" ? "/images/about2.jpg" : "/images/about.jpg"}
+          src={"/images/about2.jpg"}
           height={500}
           width={500}
           alt={"About Me"}

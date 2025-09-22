@@ -30,7 +30,7 @@ const ContactForm = () => {
       message: "",
     },
   });
-  const [state, formAction, pending] = useActionState<ActionData, FormData>(
+  const [state, formAction, pending] = useActionState<ActionData, z.infer<typeof contactSchema>>(
     createContact,
     {
       message: "",
@@ -40,11 +40,7 @@ const ContactForm = () => {
 
   const handleSumbit = async (data: z.infer<typeof contactSchema>) => {
     startTransition(() => {
-      const formData = new FormData();
-      Object.entries(data).forEach(([key, value]) => {
-        formData.append(key, value.toString());
-      });
-      formAction(formData);
+      formAction(data);
     });
   };
 

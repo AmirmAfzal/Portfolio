@@ -5,15 +5,15 @@ import { ActionData } from "@/lib/formTypes";
 import { connectDB } from "../db/db";
 import contactModel from "../db/models/contactModel";
 import { contactSchema } from "../validation/schemas/contactSchema";
+import { z } from "zod";
 
 export const createContact = async (
   prevState: ActionData,
-  formData: FormData
+  formData: z.infer<typeof contactSchema>
 ): Promise<ActionData> => {
   await connectDB();
-  const data = Object.fromEntries(formData.entries());
 
-  const result = await contactSchema.safeParse(data);
+  const result = await contactSchema.safeParse(formData);
   if (!result.success) {
     return {
       message: "ERROR",

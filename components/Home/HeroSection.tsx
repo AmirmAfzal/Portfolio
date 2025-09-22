@@ -40,7 +40,7 @@ const HeroSectionContent = ({ s }: HeroSectionContentProps) => {
         width={1000}
         height={1000}
         className="w-full aspect-square object-cover order-1 rounded-[50px]"
-        src={s === "true" ? "/images/hero2.jpg" : "/images/hero.png"}
+        src={"/images/hero2.jpg"}
         alt=""
       />
     </section>
