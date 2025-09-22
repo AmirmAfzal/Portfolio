@@ -6,15 +6,13 @@ import ContactSection from "@/components/Home/ContactSection.client";
 import HeroSection from "@/components/Home/HeroSection.client";
 import ProjectSection from "@/components/Home/ProjectSection.client";
 import SkillsSection from "@/components/Home/SkillsSection.client";
-interface Props {
- searchParams : Promise<{s : string}>
-}
-const HomePage = async({searchParams}:Props) => {
-  const s = (await searchParams).s
+
+const HomePage = async() => {
+  
   return (
     <div>
       {/* <Background /> */}
-      <HeroSection s={s} />
+      <HeroSection />
       <SkillsSection />
       <ProjectSection />
       <AboutSection />
