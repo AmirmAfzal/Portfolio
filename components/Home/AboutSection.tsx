@@ -2,11 +2,7 @@ import React from "react";
 import Image from "next/image";
 import HeroTitle from "./HeroTitle.client";
 
-export interface AboutSectionContentProps {
-  s: string;
-}
-
-const AboutSectionContent = ({ s }: AboutSectionContentProps) => {
+const AboutSectionContent = () => {
   return (
     <div className="relative z-20 container mx-auto mt-64 grid grid-cols-1 lg:grid-cols-2 items-center gap-8 px-4 lg:px-0">
       <div className="flex flex-col order-2 lg:order-1">
