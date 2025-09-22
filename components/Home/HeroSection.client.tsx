@@ -5,7 +5,7 @@ import { useGSAP } from "@gsap/react";
 import { SplitText } from "gsap/all";
 import gsap from "gsap";
 
-const HeroSection = ({ s }: { s: string }) => {
+const HeroSection = () => {
   const root = useRef<HTMLDivElement>(null);
 
   useGSAP(
@@ -86,7 +86,7 @@ const HeroSection = ({ s }: { s: string }) => {
 
   return (
     <div ref={root}>
-      <HeroSectionContent s={s} />
+      <HeroSectionContent />
     </div>
   );
 };

@@ -8,7 +8,7 @@ export interface HeroSectionContentProps {
   s: string;
 }
 
-const HeroSectionContent = ({ s }: HeroSectionContentProps) => {
+const HeroSectionContent = () => {
   return (
     <section className="container mx-auto grid min-h-[70vh] grid-cols-1 items-center gap-8 lg:gap-16 px-4 md:grid-cols-2 md:px-0">
       <div className="flex flex-col order-2">
@@ -18,7 +18,7 @@ const HeroSectionContent = ({ s }: HeroSectionContentProps) => {
         >
           Hey! My Name is <br className="hidden md:inline" />
           <span className="text-primary text-5xl font-bold sm:text-6xl md:text-8xl">
-            { s=== "true" ? "Milad":"Amirreza"}
+            Milad
           </span>
         </h1>
         <p

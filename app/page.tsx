@@ -17,7 +17,7 @@ const HomePage = async({searchParams}:Props) => {
       <HeroSection s={s} />
       <SkillsSection />
       <ProjectSection />
-      <AboutSection s={s} />
+      <AboutSection />
       <ContactSection />
     </div>
   );
