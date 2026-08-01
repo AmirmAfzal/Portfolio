@@ -65,7 +65,7 @@ const ProjectCard = (props: ProjectInterface) => {
           width={1800}
           src={props.image}
           alt={props.title}
-          className="m-0 w-full rounded-b-none object-cover lg:-mr-36 lg:-mb-36 lg:rounded-3xl"
+          className="m-0 w-full rounded-b-none object-cover transition-transform duration-500 ease-out hover:scale-105 lg:-mr-36 lg:-mb-36 lg:rounded-3xl"
         />
       </div>
     </div>

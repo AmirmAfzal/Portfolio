@@ -1,10 +1,7 @@
 import React from "react";
-import gsap from "gsap";
-import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { twMerge } from "tailwind-merge";
+import { scrollToHash } from "@/lib/scroll";
 import Icon from "../ui/Icon";
-
-gsap.registerPlugin(ScrollToPlugin);
 
 interface Props {
   className?: string;
@@ -13,7 +10,7 @@ interface Props {
 const TalkButton = (props: Props) => {
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    gsap.to(window, { duration: 1, scrollTo: { y: "#contact", offsetY: 200 } });
+    scrollToHash("#contact");
   };
   return (
     <button

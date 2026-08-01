@@ -1,15 +1,21 @@
 "use client";
 import React, { useRef } from "react";
+import dynamic from "next/dynamic";
 import HeroSectionContent from "./HeroSection";
 import { useGSAP } from "@gsap/react";
 import { SplitText } from "gsap/all";
 import gsap from "gsap";
+import { prefersReducedMotion } from "@/lib/scroll";
+
+const Hero3DBackdrop = dynamic(() => import("./Hero3D"), { ssr: false });
 
 const HeroSection = () => {
   const root = useRef<HTMLDivElement>(null);
 
   useGSAP(
     () => {
+      if (prefersReducedMotion()) return;
+
       const mm = gsap.matchMedia();
       mm.add("(min-width: 1024px)", () => {
         const tl = gsap.timeline();
@@ -85,7 +91,8 @@ const HeroSection = () => {
   );
 
   return (
-    <div ref={root}>
+    <div ref={root} className="relative">
+      <Hero3DBackdrop />
       <HeroSectionContent />
     </div>
   );

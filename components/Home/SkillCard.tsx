@@ -3,11 +3,16 @@ import React from "react";
 import { SkillInterface } from "@/lib/data/skills";
 
 import Icon from "../ui/Icon";
+import Tilt from "../ui/Tilt";
 import TalkButton from "./TalkButton";
 
 const SkillCard = (props: SkillInterface) => {
   return (
-    <div className="border-opacity-20 bg-base-200/20 hover:bg-primary/10 flex w-full transform cursor-pointer flex-col justify-between rounded-2xl border-2 border-[#71717120] px-4 sm:px-8 pt-8 sm:pt-12 pb-6 sm:pb-8 transition duration-300 ease-in-out hover:!scale-105">
+    <Tilt
+      max={8}
+      hoverScale={1.03}
+      className="border-opacity-20 bg-base-200/20 hover:bg-primary/10 flex h-full w-full cursor-pointer flex-col justify-between rounded-2xl border-2 border-[#71717120] px-4 sm:px-8 pt-8 sm:pt-12 pb-6 sm:pb-8 transition duration-300 ease-in-out"
+    >
       <div className="flex w-full flex-col">
         <div className="flex flex-row items-center gap-4">
           <Icon
@@ -30,7 +35,7 @@ const SkillCard = (props: SkillInterface) => {
         </ul>
       </div>
       <TalkButton className="mt-8 justify-self-end" />
-    </div>
+    </Tilt>
   );
 };
 

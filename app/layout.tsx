@@ -1,6 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import { Poppins } from "next/font/google";
 
+import Preloader from "@/components/Preloader";
+import SmoothScroll from "@/components/ui/SmoothScroll";
 import Navbar from "@/components/ui/Navbar/Navbar";
 import AuthProvider from "./auth/AuthProvider";
 import Footer from "@/components/ui/Footer";
@@ -103,11 +105,17 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             }),
           }}
         />
-        <AuthProvider>
-          <Navbar />
-          <main className="no-scrollbar min-h-screen">{children}</main>
-          <Footer />
-        </AuthProvider>
+        <Preloader />
+        <div id="smooth-wrapper">
+          <div id="smooth-content">
+            <AuthProvider>
+              <Navbar />
+              <main className="no-scrollbar min-h-screen">{children}</main>
+              <Footer />
+            </AuthProvider>
+          </div>
+        </div>
+        <SmoothScroll />
         <Analytics />
       </body>
     </html>
