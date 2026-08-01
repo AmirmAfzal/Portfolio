@@ -1,7 +1,9 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 import { ProjectInterface } from "@/lib/data/projects";
+import Icon from "../ui/Icon";
 
 import TalkButton from "./TalkButton";
 
@@ -31,7 +33,31 @@ const ProjectCard = (props: ProjectInterface) => {
             </div>
           ))}
         </div>
-        <TalkButton className="mt-8 w-full md:w-max" />
+        <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+          {props.liveUrl && (
+            <Link
+              href={props.liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-primary btn-soft gap-2 sm:w-max"
+            >
+              <Icon icon="mynaui:external-link" width={20} />
+              View Live Demo
+            </Link>
+          )}
+          {props.githubUrl && (
+            <Link
+              href={props.githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-outline btn-primary gap-2 sm:w-max"
+            >
+              <Icon icon="lineicons:github" width={20} />
+              Source Code
+            </Link>
+          )}
+          <TalkButton className="w-full sm:w-max" />
+        </div>
       </div>
       <div className="relative order-1 flex w-full items-center justify-center lg:order-2">
         <Image
