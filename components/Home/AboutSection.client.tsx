@@ -4,6 +4,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger, SplitText } from "gsap/all";
 import AboutSectionContent from "./AboutSection";
+import { prefersReducedMotion } from "@/lib/scroll";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
@@ -12,6 +13,8 @@ const AboutSection = () => {
 
   useGSAP(
     () => {
+      if (prefersReducedMotion()) return;
+
       const mm = gsap.matchMedia();
       mm.add("(min-width: 1024px)", () => {
         const tl = gsap.timeline({
@@ -65,6 +68,30 @@ const AboutSection = () => {
             x: 0,
           },
           "start"
+        );
+      });
+      mm.add("(max-width: 1023px)", () => {
+        gsap.fromTo(
+          "#about-description",
+          { y: 24, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.6,
+            ease: "power2.out",
+            scrollTrigger: { trigger: "#about-description", start: "top 88%" },
+          }
+        );
+        gsap.fromTo(
+          "#about-image",
+          { y: 24, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.6,
+            ease: "power2.out",
+            scrollTrigger: { trigger: "#about-image", start: "top 90%" },
+          }
         );
       });
       return () => mm.revert();

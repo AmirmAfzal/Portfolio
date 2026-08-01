@@ -1,10 +1,7 @@
 "use client";
 import React, { useState } from "react";
-import gsap from "gsap";
-import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+import { scrollToHash } from "@/lib/scroll";
 import Icon from "../Icon";
-
-gsap.registerPlugin(ScrollToPlugin);
 
 const LINKS = [
   { label: "Skills", href: "#skills" },
@@ -19,10 +16,7 @@ const MobileMenu = () => {
 
   const handleScroll = (href: string) => {
     setOpen(false);
-    gsap.to(window, {
-      duration: 1,
-      scrollTo: { y: href, offsetY: 100 },
-    });
+    scrollToHash(href);
   };
 
   return (

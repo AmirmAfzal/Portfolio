@@ -11,8 +11,12 @@ const StatsSectionContent = () => {
             className="stat-card flex flex-col items-center text-center"
             key={index}
           >
-            <span className="text-primary text-4xl font-bold md:text-5xl">
-              {stat.value}
+            <span
+              className="stat-value text-primary text-4xl font-bold md:text-5xl"
+              data-value={stat.value}
+              data-suffix={stat.suffix}
+            >
+              0{stat.suffix}
             </span>
             <span className="text-base-content/70 mt-3 text-xs font-medium uppercase tracking-wider sm:text-sm">
               {stat.label}

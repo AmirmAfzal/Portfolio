@@ -4,6 +4,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger, SplitText } from "gsap/all";
 import HeroTitleContent from "./HeroTitle";
+import { prefersReducedMotion } from "@/lib/scroll";
 
 type Props = React.ComponentProps<typeof HeroTitleContent>;
 
@@ -14,6 +15,8 @@ const HeroTitle = (props: Props) => {
 
   useGSAP(
     () => {
+      if (prefersReducedMotion()) return;
+
       const mm = gsap.matchMedia();
       mm.add("(min-width: 1024px)", () => {
         const tl = gsap.timeline({
@@ -57,6 +60,36 @@ const HeroTitle = (props: Props) => {
               }
             );
           }, ">-0.3");
+      });
+      mm.add("(max-width: 1023px)", () => {
+        gsap.fromTo(
+          ".hero-subtitle",
+          { y: 30, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.6,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: ".hero-subtitle",
+              start: "top 85%",
+            },
+          }
+        );
+        gsap.fromTo(
+          ".hero-description",
+          { y: 20, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.6,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: ".hero-description",
+              start: "top 88%",
+            },
+          }
+        );
       });
       return () => mm.revert();
     },
