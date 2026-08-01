@@ -5,6 +5,10 @@ export interface ProjectInterface {
   tools : string[];
   company: string;
   year: number;
+  // Fill these in to enable the "View Live Demo" / "Source Code" buttons.
+  // Leave as "" to hide the button.
+  liveUrl: string;
+  githubUrl: string;
 }
 export const projects: ProjectInterface[] = [
   
@@ -28,6 +32,8 @@ export const projects: ProjectInterface[] = [
     ],
     company: "Todo Rda",
     year: 2024,
+    liveUrl: "",
+    githubUrl: "",
   },
   {
     title: "Digital Advertising Studio Website",
@@ -47,6 +53,8 @@ export const projects: ProjectInterface[] = [
     ],
     company: "Mixord",
     year: 2025,
+    liveUrl: "",
+    githubUrl: "",
   },
   {
     title: "Holding Company Website",
@@ -67,6 +75,8 @@ export const projects: ProjectInterface[] = [
     ],
     company: "Group100",
     year: 2023,
+    liveUrl: "",
+    githubUrl: "",
   },
 
 ];
