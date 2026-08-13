@@ -19,8 +19,6 @@ const Navbar = () => {
           A.MOHAMMADI
         </span>
         <div className="bg-primary h-1 w-1 animate-pulse rounded-full opacity-20"></div>
-        <NavLink href={"#testimonials"}>TESTIMONIALS</NavLink>
-        <div className="bg-primary h-1 w-1 animate-pulse rounded-full opacity-20"></div>
         <NavLink href={"#about"}>ABOUT</NavLink>
         <div className="bg-primary h-1 w-1 animate-pulse rounded-full opacity-20"></div>
         <NavLink href={"#contact"}>CONTACT</NavLink>
