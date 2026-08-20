@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 import NavLink from "./NavLink";
 import MobileMenu from "./MobileMenu";
@@ -20,6 +21,10 @@ const Navbar = () => {
         </span>
         <div className="bg-primary h-1 w-1 animate-pulse rounded-full opacity-20"></div>
         <NavLink href={"#about"}>ABOUT</NavLink>
+        <div className="bg-primary h-1 w-1 animate-pulse rounded-full opacity-20"></div>
+        <Link href="/notes" className="btn btn-ghost z-30 btn-lg font-medium">
+          NOTES
+        </Link>
         <div className="bg-primary h-1 w-1 animate-pulse rounded-full opacity-20"></div>
         <NavLink href={"#contact"}>CONTACT</NavLink>
       </div>

@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import Link from "next/link";
 import { scrollToHash } from "@/lib/scroll";
 import Icon from "../Icon";
 
@@ -45,6 +46,14 @@ const MobileMenu = () => {
               <Icon icon="mynaui:arrow-up-right" width={18} height={18} />
             </button>
           ))}
+          <Link
+            href="/notes"
+            onClick={() => setOpen(false)}
+            className="flex items-center justify-between rounded-xl px-4 py-3 text-left text-sm font-medium transition hover:bg-primary/10 hover:text-primary"
+          >
+            Notes
+            <Icon icon="mynaui:arrow-up-right" width={18} height={18} />
+          </Link>
         </div>
       )}
     </div>
